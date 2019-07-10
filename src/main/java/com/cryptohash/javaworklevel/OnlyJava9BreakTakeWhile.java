@@ -5,6 +5,7 @@ import java.util.stream.Stream;
 
 /**
  * java 7's break is similar to java 9's takeWhile
+ * java 8 , we have to implement , i am unable to understand , after lambda practice lets see!!!!!!!
  */
 
 public class OnlyJava9BreakTakeWhile {

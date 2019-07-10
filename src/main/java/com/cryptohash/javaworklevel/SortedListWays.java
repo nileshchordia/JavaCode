@@ -4,10 +4,7 @@ package com.cryptohash.javaworklevel;
 import com.google.common.collect.Comparators;
 import com.google.common.collect.Ordering;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 
 public class SortedListWays {
@@ -24,11 +21,14 @@ public class SortedListWays {
          * 1st approach comparable
          *
          */
+        System.out.println("IS Sorted ? : " + methodFirstApproach(list));
+
 
         /**
          * 2nd approach comparator
          *
          */
+
 
         /**
          * 3rd approach recursive
@@ -61,7 +61,23 @@ public class SortedListWays {
 
         System.out.println("AFTER SORT IN RECURSIVE APPROACH");
         System.out.println(recursiveSort(stringList));
+        System.out.println("AFTER SORT IN Comparable Approach");
+        System.out.println("IS Sorted ? : " + methodFirstApproach(stringList));
 
+
+    }
+
+    private static boolean methodFirstApproach(List<String> list) {
+        Iterator<String> iterator = list.iterator();
+        String current, prev = iterator.next();
+        while (iterator.hasNext()) {
+            current = iterator.next();
+            if (prev.compareTo(current) > 0) {
+                return false;
+            }
+            prev = current;
+        }
+        return true;
     }
 
     private static boolean recursiveSort(List<String> stringList) {

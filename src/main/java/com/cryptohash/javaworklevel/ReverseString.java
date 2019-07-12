@@ -32,7 +32,7 @@ public class ReverseString {
          */
         System.out.println("STRING BUILDER");
         StringBuilder stringBuilder = new StringBuilder(input);
-        StringBuilder reverse = stringBuilder.reverse();
+        stringBuilder.reverse();
         System.out.println(stringBuilder);
 
 

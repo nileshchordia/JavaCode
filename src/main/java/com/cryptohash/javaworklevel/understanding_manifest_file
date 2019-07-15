@@ -1,0 +1,50 @@
+A Java Archive (JAR) is described by its manifest file.
+
+The manifest file is named MANIFEST.MF and is located
+under the META-INF directory in the JAR. It’s simply a list of key and value pairs,
+called headers or attributes, grouped into sections.
+
+These headers supply metadata
+that help us describe aspects of our JAR
+such as the versions of packages, what application class to execute,
+the classpath, signature material and much more.
+
+build a jar
+->jar cf MyJar.jar classes/
+
+We can include this file(manifest.txt) and jar will merge it with the default manifest file
+when we use the m option:
+manifest.txt data
+Built-By: nileshjain
+
+
+jar cfm MyJar.jar manifest.txt classes/
+
+A header must follow a certain format and be separated by a new line:
+
+A valid header must have a space between the colon and the value.
+Another important point is there must be a new line at the end of the file.
+Otherwise, the last header is ignored.
+
+Main headers typically provide general information:
+
+Manifest-Version: the version of the specification
+Created-By: the tool version and vendor that created the manifest file
+Multi-Release: if true, then this is a Multi-Release Jar
+Built-By: this custom header gives the name of the user that created the manifest file
+
+If our JAR contains a runnable application then we can specify the entry point. Similarly, we can provide the classpath. By doing so, we avoid having to specify it when we want to run it.
+
+Main-Class: the package and name of the class with a main method (no .class extension)
+Class-Path: a space separated list of relative paths to libraries or resources
+For example, if our application entry point is in Application.class and it uses libraries and resources then we can add the needed headers:
+
+Main-Class: com.cryptohash.Application
+Class-Path: core.jar lib/ properties/
+The classpath includes core.jar and all the files in the lib and properties directories.
+ These assets are loaded relative to where the JAR is executed and not from within the JAR itself. In other words, they must exist outside the JAR.
+
+
+
+
+

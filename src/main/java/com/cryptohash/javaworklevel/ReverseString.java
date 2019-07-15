@@ -71,8 +71,31 @@ public class ReverseString {
         /**
          *reverse order of words in a sentence using String Builder
          */
-//        reverseOrderOfWords()
 
+        System.out.println("STRING BUFFER REVERSE STRING");
+
+        String revSentence = reverseOrderOfWordsStringBuffer("nil jain");
+        System.out.println(revSentence);
+
+        /**
+         * COMMONS LANGS
+         */
+        System.out.println("COMMON LANGS REVERSE STRING");
+
+        String s = StringUtils.reverseDelimited("nilesh jain", ' ');
+        System.out.println(s);
+
+    }
+
+    private static String reverseOrderOfWordsStringBuffer(String s) {
+        String regex = " ";
+        String[] split = s.split(regex);
+        StringBuffer stringBuffer = new StringBuffer();
+        for (int i = split.length - 1; i >= 0; i--) {
+            stringBuffer.append(split[i]);
+            stringBuffer.append(" ");
+        }
+        return stringBuffer.toString().trim();
     }
 
     public static String reverseOrderOfWords(String sentence) {
@@ -83,7 +106,6 @@ public class ReverseString {
             reverse = reverse + split[i] + " ";
         }
         return reverse.trim();
-
     }
 
 

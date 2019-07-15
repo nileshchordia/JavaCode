@@ -1,2 +1,13 @@
 Easy Random : which generate random POJO(bean).
 Java Faker : which generate string and many things (valuable things)
+Efficient Java Matrix Library: matrix library
+Deep Learning Library ND4J : used for matrix operation
+Apache Common Math: used for matrix operation and others things also
+Linear Algebra for Java(LA4J):  used for matrix operation
+Colt : used for matrix operation
+JMH benchmarking library : used for performance testing (bench marking testing)
+
+
+
+
+

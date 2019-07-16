@@ -1,8 +1,10 @@
 package com.cryptohash.javaworklevel;
 
+import com.google.common.base.Joiner;
+import com.google.common.collect.ImmutableList;
+
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.Properties;
 
 public class MultiLineString {
     public static void main(String[] args) {
@@ -16,7 +18,7 @@ public class MultiLineString {
         System.out.println(newLine);
 
         /**
-         * string cocat
+         * string concat
          */
         String concat = "".concat("nilesh").concat(newLine).concat("jain").concat(newLine).concat("love").concat(newLine).concat("coding").concat(newLine);
         System.out.println(concat);
@@ -57,6 +59,14 @@ public class MultiLineString {
         printWriter.println("love");
         printWriter.println("coding");
         System.out.println(stringWriter1.toString());
+
+        /**
+         * Guava jOiner
+         */
+
+        String join1 = Joiner.on(newLine).join(ImmutableList.of("nilesh", "love", "coding"));
+        System.out.println(join1);
+
 
     }
 }
